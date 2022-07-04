@@ -1,5 +1,4 @@
 import discord
-from Weather import weather
 from weatherAPI import weatherAPI
 client = discord.Client()
 
@@ -20,4 +19,4 @@ async def on_message(message):
 
 
 #You can get the Token from your Discord Developer Portal.
-client.run('Token')
+client.run('ODU1NDc1MDM1NzYxNjcyMjIy.GnhIL5._YFfRCKEIoZpVUfl74224PkzgNlQ1-hFFDeoVo')
