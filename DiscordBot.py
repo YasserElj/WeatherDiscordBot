@@ -19,4 +19,4 @@ async def on_message(message):
 
 
 #You can get the Token from your Discord Developer Portal.
-client.run('token')
+client.run('ODU1NDc1MDM1NzYxNjcyMjIy.GchGW9.1nI6eK7zcJ617GkEuVC5VovhmefRh5PRernnrw')

@@ -15,7 +15,7 @@ def weatherAPI(city):
 
     temp = int(response.json()['main']['temp'] - 273.15)
 
-    status = response.json()['weather'][0]['main']
+    status = response.json()['weather'][0]['description']
 
     humidity = response.json()['main']['humidity']
 
@@ -23,3 +23,4 @@ def weatherAPI(city):
     
 
     return temp, status, humidity, date,name
+
