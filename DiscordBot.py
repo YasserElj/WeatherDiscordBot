@@ -1,5 +1,6 @@
 import discord
 from Weather import weather
+from weatherAPI import weatherAPI
 client = discord.Client()
 
 @client.event
@@ -12,13 +13,11 @@ async def on_message(message):
         return
 
     if message.content.startswith('weather') or message.content.startswith('Weather') or message.content.startswith('WEATHER'):
-        u = weather(message.content.split(" ", 1)[1])
-        w =  u[0]+'  '+u[1] #+ '\n'+u[2]
-        await message.channel.send(w)
+        city = message.content.split(" ", 1)[1] 
+        u = weatherAPI(city)
 
-    if message.content.startswith('What is your name'):
+        await message.channel.send(f'{u[0]}°C {u[4]}  \n{u[1]} \n{u[3]}')
 
-        await message.channel.send('Wa sir khalina na3so ')
 
 #You can get the Token from your Discord Developer Portal.
 client.run('Token')
