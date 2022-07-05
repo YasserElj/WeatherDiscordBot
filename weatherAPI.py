@@ -1,9 +1,7 @@
 import requests
-from datetime import datetime
 
-key = '52c457badebc350feaaae7d514fa8248'
-
-now = datetime.now()
+#OpenWeatherMap API key
+key = 'key'
 
 def weatherAPI(city):
 
@@ -18,9 +16,6 @@ def weatherAPI(city):
     status = response.json()['weather'][0]['description']
 
     humidity = response.json()['main']['humidity']
-
-    date = now.strftime("%d/%m/%Y %H:%M")
     
 
-    return temp, status, humidity, date,name
-
+    return temp, status, humidity,name

@@ -1,5 +1,7 @@
 import discord
 from weatherAPI import weatherAPI
+import time
+
 client = discord.Client()
 
 @client.event
@@ -15,7 +17,13 @@ async def on_message(message):
         city = message.content.split(" ", 1)[1] 
         u = weatherAPI(city)
 
-        await message.channel.send(f'{u[0]}°C {u[4]}  \n{u[1]} \n{u[3]}')
+        timeNow = time.strftime("%a, %d %b %Y %H:%M:%S",time.gmtime(time.time()))
+
+        await message.channel.send(f'{u[0]}°C {u[3]}  \n{u[1]} \n{timeNow} GMT')
+
+    if message.content.startswith('!time'):
+        timeNow = time.strftime("%a, %d %b %Y %H:%M:%S",time.gmtime(time.time()))
+        await message.channel.send(f'{timeNow} GMT')
 
 
 #You can get the Token from your Discord Developer Portal.
