@@ -17,7 +17,7 @@ async def on_message(message):
         city = message.content.split(" ", 1)[1] 
         u = weatherAPI(city)
 
-        timeNow = time.strftime("%a, %d %b %Y %H:%M:%S",time.gmtime(time.time()))
+        timeNow = time.strftime("%a, %d %b %Y %H:%M",time.gmtime(time.time()))
 
         await message.channel.send(f'{u[0]}°C {u[3]}  \n{u[1]} \n{timeNow} GMT')
 
